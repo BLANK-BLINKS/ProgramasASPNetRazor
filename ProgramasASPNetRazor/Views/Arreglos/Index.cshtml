@@ -1,0 +1,70 @@
+@model IEnumerable<ProgramasASPNetRazor.Models.ArreglosModel>
+
+@{
+    ViewData["Title"] = "Arreglos";
+}
+
+<h1>Arreglos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumerosOriginales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumerosOrdenados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Promedio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Moda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mediana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PasosMediana)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @string.Join(", ", item.NumerosOriginales)
+            </td>
+            <td>
+                @string.Join(", ", item.NumerosOrdenados)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Suma)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Promedio)
+            </td>
+            <td>
+                @if (item.Moda.Any())
+                {
+                    @string.Join(", ", item.Moda)
+                }
+                else
+                {
+                    <span class="text-muted">No hay moda</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Mediana)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PasosMediana)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

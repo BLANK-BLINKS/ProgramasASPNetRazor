@@ -1,0 +1,48 @@
+@model IEnumerable<ProgramasASPNetRazor.Models.CesarModel>
+
+@{
+    ViewData["Title"] = "Encriptacion Cesar";
+}
+
+<h1>Encriptacion Cesar</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Mensaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desplazamiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resultado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Mensaje)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Desplazamiento)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Accion)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Resultado)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

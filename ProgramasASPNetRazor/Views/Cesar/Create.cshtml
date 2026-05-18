@@ -1,0 +1,50 @@
+@model ProgramasASPNetRazor.Models.CesarModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<h4>CesarModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Procesar" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Mensaje" class="control-label"></label>
+                <textarea asp-for="Mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <span asp-validation-for="Mensaje" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Desplazamiento" class="control-label"></label>
+                <input asp-for="Desplazamiento" class="form-control" type="number" min="1" />
+                <span asp-validation-for="Desplazamiento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3 mt-3">
+                <label class="control-label font-weight-bold d-block">Selecciona una acción:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" asp-for="Accion" value="Codificar" id="radioCodificar" checked>
+                    <label class="form-check-label" for="radioCodificar">Codificar</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" asp-for="Accion" value="Decodificar" id="radioDecodificar">
+                    <label class="form-check-label" for="radioDecodificar">Decodificar</label>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Procesar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>

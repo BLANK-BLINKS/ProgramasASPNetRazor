@@ -1,0 +1,66 @@
+@model IEnumerable<ProgramasASPNetRazor.Models.ExpresionModel>
+
+@{
+    ViewData["Title"] = "Expresion de igualdades";
+}
+
+<h1>Expresion de igualdades</h1>
+
+<p>
+    <a asp-action="Create">Evaluar expresion</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.a)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.x)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.b)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.y)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.n)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpresionArmada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resultado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.a)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.x)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.b)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.y)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.n)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ExpresionArmada)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Resultado)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
